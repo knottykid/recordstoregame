@@ -1,6 +1,8 @@
 class Game {
   constructor() {
       this.player = new Player(250,350)
+      //this.vinyl = new Vinyl()
+      this.background = new Background()
   }
 
   setup(){
@@ -21,6 +23,7 @@ class Game {
         grid[i].show()
       }
       this.player.draw()
+      
   }
 
   

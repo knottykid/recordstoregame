@@ -2,14 +2,20 @@ const game = new Game()
 
 function preload(){}
 
+
+//Create canvas for the game
 function setup() {
   createCanvas(WIDTH, HEIGHT);
   game.setup()
   
 }
+
+//draw all the things for the game
 function draw() {
   game.draw()
 }
+
+// create a cell type of grid
 function Cell (x, y) {
   this.x = x;
   this.y = y;
@@ -25,6 +31,13 @@ function Cell (x, y) {
   }
 }
 
+
+//buttons from the keyboard to press
 function keyPressed(){
   game.keyPressed()
 }
+
+setInterval((x,y)=>{
+      x -= 35;
+      y += 35;
+  }, 500);

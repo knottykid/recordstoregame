@@ -15,7 +15,7 @@ class Player {
     moveDown () {
         this.y += this.height
         if(this.y + this.height > HEIGHT){
-            this.y = this.height - HEIGHT
+            this.y =  HEIGHT - this.height 
         }
     }
      moveLeft(){
@@ -27,7 +27,7 @@ class Player {
      moveRight(){
          this.x += this.width 
          if(this.x + this.width > WIDTH){
-             this.x = this.width - WIDTH
+             this.x = WIDTH - this.width 
          }
      }
 
