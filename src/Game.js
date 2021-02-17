@@ -8,6 +8,7 @@ class Game {
   setup(){
     cols = floor(WIDTH)
   rows = floor(HEIGHT)
+  frameRate(20)
 
   for (let   x = 0; x < rows; x++){
     for (let y = 0; y < cols; y++){
@@ -15,16 +16,20 @@ class Game {
       grid.push(cell)
     }
   }
-  }
+  current = grid[250, 350]
+}
 
   draw() {
-      background(150, 120, 230)
+      background("red")
       for (let i = 0; i < grid.length; i++){
         grid[i].show()
       }
+    
+    
+     
       this.player.draw()
-      
   }
+
 
   
   keyPressed() {
@@ -47,3 +52,5 @@ class Game {
  
     
 }
+
+

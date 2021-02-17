@@ -1,3 +1,10 @@
 class Background{
     constructor(){}
+
+    draw(){
+        
+    }
+
+
+    
 }

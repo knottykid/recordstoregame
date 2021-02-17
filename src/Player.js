@@ -2,8 +2,8 @@ class Player {
     constructor(x, y){
         this.x = x
         this.y = y 
-        this.width = WIDTH/12
-        this.height = HEIGHT/8
+        this.width = w
+        this.height = w
     }
 
     moveUp (){
