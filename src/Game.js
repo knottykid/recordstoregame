@@ -1,11 +1,13 @@
 class Game {
   constructor() {
       this.player = new Player(250,350)
-      //this.vinyl = new Vinyl()
+      this.vinyl = new Vinyl()
       this.background = new Background()
   }
 
   setup(){
+   this.vinyl.setup()
+    
     cols = floor(WIDTH)
   rows = floor(HEIGHT)
   frameRate(20)
@@ -26,8 +28,9 @@ class Game {
       }
     
     
-     
+      
       this.player.draw()
+      this.vinyl.draw()
   }
 
 

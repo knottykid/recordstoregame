@@ -5,6 +5,5 @@ let w = 50
 let grid = []
 let bgImage;
 let collector;
-let vinyl;
+let vinyl = []
 let current;
-let stack = []
