@@ -1,6 +1,10 @@
 const game = new Game();
 
-function preload() {}
+function preload() {
+  for (i = 0; i < 10; i++) {
+    vinyl[i] = loadImage(`Vinyl/R${i}.jpg`);
+  }
+}
 
 //Create canvas for the game
 function setup() {
@@ -43,7 +47,7 @@ function keyPressed() {
 //   game.vinyl.mousePressed()
 // }
 
-setInterval((x, y) => {
-  x -= 35;
-  y += 35;
-}, 500);
+// setInterval((x, y) => {
+//   x -= 35;
+//   y += 35;
+// }, 500);

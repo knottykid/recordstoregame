@@ -6,8 +6,6 @@ class Game {
   }
 
   setup() {
-    //this.vinyl.setup();
-
     cols = floor(WIDTH);
     rows = floor(HEIGHT);
 
@@ -17,7 +15,6 @@ class Game {
         grid.push(cell);
       }
     }
-    current = grid[(250, 350)];
   }
 
   draw() {
@@ -35,17 +32,12 @@ class Game {
     //array of obstacles
     this.vinyls.forEach((vinyl, index) => {
       vinyl.draw();
+      vinyl.move();
 
-      if (this.collisionCheck(this.player, vinyl) || frameCount <= 5) {
+      if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 2) {
         this.vinyls.splice(index, 1);
       }
-
-      // remove the obstacle if its out of canvas
-      // if (vinyl.x <= -vinyl.width) {
-
-      // }
     });
-    //this.vinyls.draw();
   }
 
   // for (let i = 0; i <= 1; i++) {

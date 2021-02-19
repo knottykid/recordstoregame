@@ -1,17 +1,18 @@
 class Vinyl {
   constructor(x, y) {
-    this.x = random(10, 500);
-    this.y = random(10, 300);
+    this.x = random(20, 300);
+    this.y = random(20, 200);
     this.width = w;
     this.height = w;
+    this.vinyl = random(vinyl);
   }
   draw() {
     // this.x -= 3;
 
-    stroke(255);
-    strokeWeight(4);
-    fill(0);
-    rect(this.x, this.y, this.width, this.height);
+    // stroke(255);
+    // strokeWeight(4);
+    // fill(0);
+    image(this.vinyl, this.x, this.y, this.width, this.height);
   }
   //   constr uctor(x, y, r) {
   //     this.x = x;
@@ -64,10 +65,10 @@ class Vinyl {
   //     }
   //   }
 
-  // move() {
-  //   this.x = this.x + random(-2, 2);
-  //   this.y = this.y + random(-2, 2);
-  // }
+  move() {
+    this.x = this.x + random(-2, 2);
+    this.y = this.y + random(-2, 2);
+  }
 
   //show() {
   // stroke(255);

@@ -1,10 +1,5 @@
-class Background{
-    constructor(){}
+class Background {
+  constructor() {}
 
-    draw(){
-        
-    }
-
-
-    
+  draw() {}
 }
