@@ -1,8 +1,8 @@
 const game = new Game();
 let lp = [];
 function preload() {
-  for (i = 0; i < 4; i++) {
-    lp[i] = loadImage(`../rsd_background/Vinyl/R-${i}.jpg`);
+  for (i = 0; i < 25; i++) {
+    lp[i] = loadImage(`./rsd_background/Vinyl/R-${i}.jpg`);
   }
 }
 

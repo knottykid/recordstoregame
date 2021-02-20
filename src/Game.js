@@ -3,6 +3,7 @@ class Game {
     this.player = new Player(250, 350);
     this.vinyls = [];
     this.background = new Background();
+    this.vinylCounter = 0;
   }
 
   setup() {
@@ -36,6 +37,8 @@ class Game {
 
       if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 10) {
         this.vinyls.splice(index, 1);
+        this.vinylCounter += 1;
+        console.log(this.vinylCounter);
       }
     });
   }
