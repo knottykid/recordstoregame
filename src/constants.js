@@ -7,3 +7,4 @@ let vinyl;
 let bgImage;
 let collector;
 let current;
+let timer = 50;

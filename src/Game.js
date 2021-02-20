@@ -3,7 +3,8 @@ class Game {
     this.player = new Player(250, 350);
     this.vinyls = [];
     this.background = new Background();
-    this.vinylCounter = 0;
+    this.vinylCounter = 1;
+    this.timeRemaining = timer;
   }
 
   setup() {
@@ -26,7 +27,7 @@ class Game {
     }
     this.player.draw();
 
-    if (frameCount % 20 === 0) {
+    if (frameCount % 10 === 0) {
       this.vinyls.push(new Vinyl());
     }
 
@@ -42,8 +43,10 @@ class Game {
         this.y > HEIGHT - 200
       ) {
         this.vinyls.splice(index, 1);
-        this.vinylCounter += 1;
-        console.log(this.vinylCounter);
+        if (this.collisionCheck(this.player, vinyl)) {
+          console.log(this.vinylCounter);
+          return (this.vinylCounter += 1);
+        }
       }
     });
   }
@@ -85,4 +88,15 @@ class Game {
       isTouchingOnLeft
     );
   }
+
+  timer = setInterval(function () {
+    if (timer > 0) {
+      console.log(timer);
+    } else {
+      console.log("Pop!");
+      noLoop();
+    }
+
+    timer--;
+  }, 1000);
 }
