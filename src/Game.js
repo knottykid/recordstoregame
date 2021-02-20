@@ -35,7 +35,12 @@ class Game {
       vinyl.draw();
       vinyl.move();
 
-      if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 10) {
+      if (
+        this.collisionCheck(this.player, vinyl) ||
+        this.vinyls.length > 10 ||
+        this.x > WIDTH - 200 ||
+        this.y > HEIGHT - 200
+      ) {
         this.vinyls.splice(index, 1);
         this.vinylCounter += 1;
         console.log(this.vinylCounter);
