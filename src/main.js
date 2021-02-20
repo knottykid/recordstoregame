@@ -2,7 +2,7 @@ const game = new Game();
 let lp = [];
 function preload() {
   for (i = 0; i < 25; i++) {
-    lp[i] = loadImage(`./rsd_background/Vinyl/R-${i}.jpg`);
+    lp[i] = loadImage(`./Vinyl/R-${i}.jpg`);
   }
 }
 
