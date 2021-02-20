@@ -18,8 +18,7 @@ class Vinyl {
     // strokeWeight(4);
     // fill(0);
     image(this.lp, this.x, this.y, this.width, this.height);
-    if (image > WIDTH - 200 || image > HEIGHT - 200) {
-      clear();
+    if (this.x > WIDTH - 200 || this.y > HEIGHT - 200) {
     }
   }
 
