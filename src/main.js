@@ -15,6 +15,7 @@ function setup() {
 
 //draw all the things for the game
 function draw() {
+  clear();
   game.draw();
 }
 function index(x, y) {

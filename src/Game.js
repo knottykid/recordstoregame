@@ -25,7 +25,7 @@ class Game {
     }
     this.player.draw();
 
-    if (frameCount % 10 === 0) {
+    if (frameCount % 20 === 0) {
       this.vinyls.push(new Vinyl());
     }
 
@@ -34,24 +34,11 @@ class Game {
       vinyl.draw();
       vinyl.move();
 
-      if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 6) {
+      if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 10) {
         this.vinyls.splice(index, 1);
       }
     });
   }
-
-  // for (let i = 0; i <= 1; i++) {
-  //   //for (let j = 0; j <= 0; j++) {
-  //   let x = 0 + 100 * i;
-  //   let y = 0 + 100 * i;
-  //   let v = new Vinyl(x, y);
-  //   vinyl.push(v);
-  //   // }
-  // }
-  // for (let lp of vinyl) {
-  //   // lp.move();
-  //   lp.show();
-  // }
 
   keyPressed() {
     if (keyCode === 38) {
@@ -91,18 +78,3 @@ class Game {
     );
   }
 }
-
-// this.vinyl.forEach((activeVinyl, index) => {
-//   if (this.grab(this.player, activeVinyl)) {
-//     this.vinyl.splice(index, 1);
-//   }
-// });
-
-/*
-TODO!
-
-1) Replace circles for squares! (make sure to test just for 1 vinyl)
-2) At game start, push a new vinyl into the game.vinyls array
-3) Check the collision detection
-
-*/
