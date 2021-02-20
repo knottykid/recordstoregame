@@ -1,10 +1,10 @@
 class Vinyl {
   constructor(x, y) {
-    this.x = random(20, 300);
-    this.y = random(20, 200);
+    this.x = random(10, 500);
+    this.y = random(10, 300);
     this.width = w;
     this.height = w;
-    this.vinyl = random(vinyl);
+    this.lp = random(lp);
   }
   draw() {
     // this.x -= 3;
@@ -12,7 +12,7 @@ class Vinyl {
     // stroke(255);
     // strokeWeight(4);
     // fill(0);
-    image(this.vinyl, this.x, this.y, this.width, this.height);
+    image(this.lp, this.x, this.y, this.width, this.height);
   }
   //   constr uctor(x, y, r) {
   //     this.x = x;

@@ -34,7 +34,7 @@ class Game {
       vinyl.draw();
       vinyl.move();
 
-      if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 2) {
+      if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 6) {
         this.vinyls.splice(index, 1);
       }
     });
