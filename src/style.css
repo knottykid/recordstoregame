@@ -1,0 +1,22 @@
+.startingPage {
+  background-repeat: no-repeat;
+  background-size: 60vh;
+  background-position: relative;
+  background-position: 450px;
+  height: 100vh;
+  background-color: #f0fefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.startButton {
+  font-size: 20px;
+  width: 150px;
+  margin-bottom: 250px;
+  padding: 10px;
+  border-radius: 10%;
+  background-color: rgba(217, 213, 93, 255);
+  box-shadow: 10px 5px 5px #db4256;
+}

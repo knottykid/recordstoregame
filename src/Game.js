@@ -5,42 +5,59 @@ class Game {
     this.background = new Background();
     this.vinylCounter = 1;
     this.timeRemaining = timer;
+    this.isRunning = false;
+    this.nextLevel = new NextLevel();
+    this.gameOver = new GameOver();
+    this.endGame = false;
   }
 
   setup() {
-    cols = floor(WIDTH);
-    rows = floor(HEIGHT);
-
-    for (let x = 0; x < rows; x++) {
-      for (let y = 0; y < cols; y++) {
-        let cell = new Cell(x, y);
-        grid.push(cell);
-      }
-    }
+    // cols = floor(WIDTH);
+    // rows = floor(HEIGHT);
+    // for (let x = 0; x < rows; x++) {
+    //   for (let y = 0; y < cols; y++) {
+    //     let cell = new Cell(x, y);
+    //     grid.push(cell);
+    //   }
+    // }
   }
 
   draw() {
     clear();
     background("red");
-    for (let i = 0; i < grid.length; i++) {
-      grid[i].show();
+
+    for (let i = 0; i <= WIDTH; i += SQUARE_SIDE) {
+      line(i, 0, i, HEIGHT);
     }
+    for (let i = 0; i <= WIDTH; i += SQUARE_SIDE) {
+      line(0, i, WIDTH, i);
+    }
+    // for (let i = 0; i < grid.length; i++) {
+    //   grid[i].show();
+    // }
     this.player.draw();
 
-    if (frameCount % 10 === 0) {
+    if (frameCount % 120 === 0) {
       this.vinyls.push(new Vinyl());
+    }
+
+    if (this.vinylCounter === 5) {
+      this.endGame = "win";
+    }
+    if (this.timeRemaining === 0) {
+      this.endGame = "out";
     }
 
     //array of obstacles
     this.vinyls.forEach((vinyl, index) => {
       vinyl.draw();
-      vinyl.move();
+      //vinyl.move();
 
       if (
         this.collisionCheck(this.player, vinyl) ||
-        this.vinyls.length > 10 ||
-        this.x > WIDTH - 200 ||
-        this.y > HEIGHT - 200
+        this.vinyls.length > 10 // ||
+        // this.x > WIDTH - 200 ||
+        // this.y > HEIGHT - 200
       ) {
         this.vinyls.splice(index, 1);
         if (this.collisionCheck(this.player, vinyl)) {
@@ -49,6 +66,13 @@ class Game {
         }
       }
     });
+
+    if (this.endGame === "win") {
+      return this.toTheNextLeve();
+    }
+    if (this.endGame === "out") {
+      return this.goBackHome;
+    }
   }
 
   keyPressed() {
@@ -93,10 +117,19 @@ class Game {
     if (timer > 0) {
       console.log(timer);
     } else {
-      console.log("Pop!");
       noLoop();
     }
 
     timer--;
   }, 1000);
+
+  toTheNextLeve() {
+    console.log("This just ran!");
+    this.nextLevel.draw();
+    //game.music.top
+  }
+  goBackHome() {
+    noLoop();
+    this.gameOver.draw();
+  }
 }
