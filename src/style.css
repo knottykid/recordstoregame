@@ -1,10 +1,13 @@
 .startingPage {
   background-repeat: no-repeat;
-  background-size: 60vh;
-  background-position: relative;
-  background-position: 450px;
+  background-image: url("../assest/a549e5b6e30d191ea78be646ce91407f.jpg");
+  background-size: 100vh;
+  background-position: absolute;
+  background-position: 200px;
   height: 100vh;
-  background-color: #f0fefe;
+  background-color: #000;
+  color: aliceblue;
+  font-size: medium;
   display: flex;
   align-items: center;
   justify-content: center;

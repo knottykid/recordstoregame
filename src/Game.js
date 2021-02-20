@@ -11,16 +11,7 @@ class Game {
     this.endGame = false;
   }
 
-  setup() {
-    // cols = floor(WIDTH);
-    // rows = floor(HEIGHT);
-    // for (let x = 0; x < rows; x++) {
-    //   for (let y = 0; y < cols; y++) {
-    //     let cell = new Cell(x, y);
-    //     grid.push(cell);
-    //   }
-    // }
-  }
+  setup() {}
 
   draw() {
     clear();
@@ -32,9 +23,7 @@ class Game {
     for (let i = 0; i <= WIDTH; i += SQUARE_SIDE) {
       line(0, i, WIDTH, i);
     }
-    // for (let i = 0; i < grid.length; i++) {
-    //   grid[i].show();
-    // }
+
     this.player.draw();
 
     if (frameCount % 120 === 0) {
@@ -51,11 +40,11 @@ class Game {
     //array of obstacles
     this.vinyls.forEach((vinyl, index) => {
       vinyl.draw();
-      //vinyl.move();
+      vinyl.move();
 
       if (
         this.collisionCheck(this.player, vinyl) ||
-        this.vinyls.length > 10 // ||
+        this.vinyls.length > 8 // ||
         // this.x > WIDTH - 200 ||
         // this.y > HEIGHT - 200
       ) {
@@ -124,8 +113,10 @@ class Game {
   }, 1000);
 
   toTheNextLeve() {
-    console.log("This just ran!");
     this.nextLevel.draw();
+    // if (frameCount % 240 === 0) {
+    //   this.vinyls.push(new Vinyl());
+    // }
     //game.music.top
   }
   goBackHome() {

@@ -1,6 +1,8 @@
 class NextLevel {
   constructor() {}
   draw() {
+    background(0, 100);
+
     text("King of Discogs");
   }
 }

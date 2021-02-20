@@ -14,14 +14,13 @@ class Vinyl {
   draw() {
     // this.x -= 3;
 
-    // stroke(255);
-    // strokeWeight(4);
     // fill(0);
-    image(this.lp, this.x, this.y, this.width, this.height);
+    if (this.x >= w && this.y >= w)
+      image(this.lp, this.x, this.y, this.width, this.height);
   }
 
   move() {
     this.x = this.x + random(-1, 1);
-    this.y = this.y + random(-1, 1);
+    //this.y = this.y + random(-3, 3);
   }
 }
