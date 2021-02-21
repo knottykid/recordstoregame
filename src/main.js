@@ -12,7 +12,7 @@ function preload() {
   for (i = 0; i < 25; i++) {
     lp[i] = loadImage(`./Vinyl/R-${i}.jpg`);
   }
-  collector = loadImage("../assest/Featured-Image20.png");
+  collector = loadImage("./assest/Featured-Image20.png");
 }
 
 //Create canvas for the game

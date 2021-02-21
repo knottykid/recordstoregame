@@ -44,12 +44,7 @@ class Game {
       vinyl.draw();
       vinyl.move();
 
-      if (
-        this.collisionCheck(this.player, vinyl) ||
-        this.vinyls.length > 8 // ||
-        // this.x > WIDTH - 200 ||
-        // this.y > HEIGHT - 200
-      ) {
+      if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 6) {
         this.vinyls.splice(index, 1);
         if (this.collisionCheck(this.player, vinyl)) {
           console.log(this.vinylCounter);
