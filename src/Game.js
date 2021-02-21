@@ -28,7 +28,7 @@ class Game {
 
     this.player.draw();
 
-    if (frameCount % 120 === 0) {
+    if (frameCount % 180 === 0) {
       this.vinyls.push(new Vinyl());
     }
 

@@ -15,12 +15,12 @@ class Vinyl {
     // this.x -= 3;
 
     // fill(0);
-    if (this.x >= w && this.y >= w)
+    if (this.x <= 500 && this.y <= 300)
       image(this.lp, this.x, this.y, this.width, this.height);
   }
 
   move() {
     this.x = this.x + random(-1, 1);
-    //this.y = this.y + random(-3, 3);
+    this.y = this.y + random(-1, 1);
   }
 }
