@@ -1,9 +1,11 @@
+let timer = 30;
+
 class Game {
   constructor() {
     this.player = new Player(250, 350);
     this.vinyls = [];
     this.background = new Background();
-    this.vinylCounter = 1;
+    this.vinylCounter = 0;
     this.timeRemaining = timer;
     this.isRunning = false;
     this.nextLevel = new NextLevel();
@@ -30,7 +32,7 @@ class Game {
       this.vinyls.push(new Vinyl());
     }
 
-    if (this.vinylCounter === 5) {
+    if (this.vinylCounter === 10) {
       this.endGame = "win";
     }
     if (this.timeRemaining === 0) {
@@ -120,7 +122,6 @@ class Game {
     //game.music.top
   }
   goBackHome() {
-    noLoop();
     this.gameOver.draw();
   }
 }

@@ -12,6 +12,7 @@ function preload() {
   for (i = 0; i < 25; i++) {
     lp[i] = loadImage(`./Vinyl/R-${i}.jpg`);
   }
+  collector = loadImage("../assest/Featured-Image20.png");
 }
 
 //Create canvas for the game
@@ -38,26 +39,9 @@ function index(x, y) {
   return x + y * cols;
 }
 
-// create a cell type of grid
-// function Cell(x, y) {
-//   this.x = x;
-//   this.y = y;
-
-//   this.show = function () {
-//     let j = this.x * w;
-//     let i = this.y * w;
-
-//     stroke(0);
-//     line(j, i, j + 100, i);
-//     line(j, i + 100, j, i);
-//   };
-// }
-
 //buttons from the keyboard to press
 function keyPressed() {
   game.keyPressed();
 }
-// function mousePressed (){
-//   game.vinyl.mousePressed()
-// }
+
 //TODO : make the vinyl to no show where the player is
