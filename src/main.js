@@ -4,7 +4,7 @@ const startButton = document.querySelector(".startButton");
 startButton.addEventListener("click", function (event) {
   startingPage.style.display = "none";
   game.isRunning = true;
-  // gameMusic.play();
+  gameMusic.play();
 });
 
 let lp = [];
@@ -13,6 +13,7 @@ function preload() {
     lp[i] = loadImage(`./Vinyl/R-${i}.jpg`);
   }
   collector = loadImage("./assest/Featured-Image20.png");
+  gameMusic = loadSound("./music/18. Knife Prty (Purity Ring Remix).mp3");
 }
 
 //Create canvas for the game

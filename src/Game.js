@@ -1,17 +1,16 @@
-let timer = 30;
-// const myCollection = document.querySelector(".counter")
-// myCollection.addEventListener(collisionCheck)
 class Game {
   constructor() {
-    this.player = new Player(250, 350);
+    this.player = new Player(300, 400);
     this.vinyls = [];
     this.background = new Background();
     this.vinylCounter = 0;
+    this.level = 1;
     this.timeRemaining = timer;
     this.isRunning = false;
     this.nextLevel = new NextLevel();
     this.gameOver = new GameOver();
     this.endGame = false;
+    this.gameMusic = gameMusic;
   }
 
   setup() {}
@@ -35,8 +34,9 @@ class Game {
 
     if (this.vinylCounter === 10) {
       this.endGame = "win";
-    }
-    if (timer === 0) {
+    } else {
+      this.timeRemaining === 0;
+
       this.endGame = "out";
     }
 
@@ -45,7 +45,7 @@ class Game {
       vinyl.draw();
       vinyl.move();
 
-      if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 6) {
+      if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 10) {
         this.vinyls.splice(index, 1);
         if (this.collisionCheck(this.player, vinyl)) {
           document.getElementById("collect").innerHTML = this.vinylCounter;
@@ -100,18 +100,16 @@ class Game {
       isTouchingOnLeft
     );
   }
+  resetVariables() {
+    this.vinylCounter = 0;
 
+    this.timeRemaining = 30;
+  }
+  nextLevel() {
+    clear();
+    this.resetVariables();
+  }
   timer = setInterval(function () {
-    // let now = new Date().getTime();
-    // let distance = timer - now;
-    // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    // document.getElementById("time").innerHTML = seconds + "s ";
-    // if (distance < 0) {
-    //   clearInterval(timer);
-    //   document.getElementById("time").innerHTML =
-    //     "the Time is gone, the Song is over";
-    // }
-
     if (timer > 0) {
       document.getElementById("time").innerHTML = timer;
 
@@ -121,6 +119,7 @@ class Game {
       document.getElementById("time").innerHTML =
         "the Time is gone, the Song is over";
       noLoop();
+      gameMusic.stop();
     }
 
     timer--;
