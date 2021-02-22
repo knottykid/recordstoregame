@@ -3,7 +3,7 @@ class Game {
     this.player = new Player(300, 400);
     this.vinyls = [];
     this.background = new Background();
-    this.vinylCounter = 1;
+    this.vinylCounter = 0;
     this.level = 1;
     this.timeRemaining = timer;
     this.isRunning = false;
