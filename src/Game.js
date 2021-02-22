@@ -3,7 +3,7 @@ class Game {
     this.player = new Player(300, 400);
     this.vinyls = [];
     this.background = new Background();
-    this.vinylCounter = 0;
+    this.vinylCounter = 1;
     this.level = 1;
     this.timeRemaining = timer;
     this.isRunning = false;
@@ -18,6 +18,10 @@ class Game {
   draw() {
     clear();
     background("red");
+    textSize(25);
+    textStyle(BOLD);
+    fill(70, 3, 117);
+    text(`Level: ${this.level}`, 1200, 100);
 
     for (let i = 0; i <= WIDTH; i += SQUARE_SIDE) {
       line(i, 0, i, HEIGHT);
@@ -56,7 +60,7 @@ class Game {
     });
 
     if (this.endGame === "win") {
-      return this.toTheNextLeve();
+      return this.toTheNextLevel();
     }
     if (this.endGame === "out") {
       return this.goBackHome;
@@ -103,12 +107,9 @@ class Game {
   resetVariables() {
     this.vinylCounter = 0;
 
-    this.timeRemaining = 30;
+    timer = 40;
   }
-  nextLevel() {
-    clear();
-    this.resetVariables();
-  }
+
   timer = setInterval(function () {
     if (timer > 0) {
       document.getElementById("time").innerHTML = timer;
@@ -125,8 +126,11 @@ class Game {
     timer--;
   }, 1000);
 
-  toTheNextLeve() {
+  toTheNextLevel() {
     this.nextLevel.draw();
+    this.level++;
+    document.getElementById("level").innerHTML = this.level;
+    this.resetVariables();
   }
   goBackHome() {
     console.log(this.goBackHome);

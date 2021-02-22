@@ -13,7 +13,10 @@ function preload() {
     lp[i] = loadImage(`./Vinyl/R-${i}.jpg`);
   }
   collector = loadImage("./assest/Featured-Image20.png");
-  gameMusic = loadSound("./music/18. Knife Prty (Purity Ring Remix).mp3");
+
+  gameMusic = loadSound(
+    "./music/Pretty Lights - Pink Floyd Time Remix (320 kbps).mp3"
+  );
 }
 
 //Create canvas for the game

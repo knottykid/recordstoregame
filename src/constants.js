@@ -7,5 +7,5 @@ let vinyl;
 let bgImage;
 let collector;
 let current;
-let timer = 50;
+let timer = 60;
 let gameMusic;
