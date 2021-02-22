@@ -28,8 +28,8 @@ function draw() {
   if (game.isRunning === false) {
     return;
   }
-  clear();
-  game.draw();
+  // clear();
+  // game.draw();
 }
 
 function index(x, y) {

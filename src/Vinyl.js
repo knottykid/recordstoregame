@@ -12,9 +12,6 @@ class Vinyl {
   }
 
   draw() {
-    // this.x -= 3;
-
-    // fill(0);
     if (this.x <= 500 && this.y <= 300)
       image(this.lp, this.x, this.y, this.width, this.height);
   }

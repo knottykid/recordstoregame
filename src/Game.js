@@ -1,5 +1,6 @@
 let timer = 30;
-
+// const myCollection = document.querySelector(".counter")
+// myCollection.addEventListener(collisionCheck)
 class Game {
   constructor() {
     this.player = new Player(250, 350);
@@ -35,7 +36,7 @@ class Game {
     if (this.vinylCounter === 10) {
       this.endGame = "win";
     }
-    if (this.timeRemaining === 0) {
+    if (timer === 0) {
       this.endGame = "out";
     }
 
@@ -47,6 +48,7 @@ class Game {
       if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 6) {
         this.vinyls.splice(index, 1);
         if (this.collisionCheck(this.player, vinyl)) {
+          document.getElementById("collect").innerHTML = this.vinylCounter;
           console.log(this.vinylCounter);
           return (this.vinylCounter += 1);
         }
@@ -100,9 +102,24 @@ class Game {
   }
 
   timer = setInterval(function () {
+    // let now = new Date().getTime();
+    // let distance = timer - now;
+    // let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // document.getElementById("time").innerHTML = seconds + "s ";
+    // if (distance < 0) {
+    //   clearInterval(timer);
+    //   document.getElementById("time").innerHTML =
+    //     "the Time is gone, the Song is over";
+    // }
+
     if (timer > 0) {
+      document.getElementById("time").innerHTML = timer;
+
       console.log(timer);
-    } else {
+    } else if (timer < 0) {
+      clearInterval(timer);
+      document.getElementById("time").innerHTML =
+        "the Time is gone, the Song is over";
       noLoop();
     }
 
@@ -111,12 +128,10 @@ class Game {
 
   toTheNextLeve() {
     this.nextLevel.draw();
-    // if (frameCount % 240 === 0) {
-    //   this.vinyls.push(new Vinyl());
-    // }
-    //game.music.top
   }
   goBackHome() {
-    this.gameOver.draw();
+    console.log(this.goBackHome);
+    noLoop();
+    this.GameOver.draw();
   }
 }

@@ -9,11 +9,7 @@ class NextLevel {
 
 class GameOver {
   draw() {
-    if (timer === 0) {
-      noLoop();
-    }
     background(0);
-
-    text("Go back home");
+    noLoop();
   }
 }
