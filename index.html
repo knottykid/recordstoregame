@@ -6,23 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>RSD Game</title>
-  
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.js"></script>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
     <div class="startingPage">
-      <h2>Record Collector Game </23>
-      <h4>Get the vinyl before they're gone<span></span></h4>
+      <h1>Record Collector Game</h1>
+      <h2>
+        Collect Vinyl and Keep the Music Alive
+        <span></span>
+      </h2>
       <button class="startButton">START</button>
     </div>
+    <div id="rsd">
+      <h1>Record Store Game<span></span></h1>
 
-    <h1>Record Store Game<span></span></h1>
-
-    <div>Time: <span id="time">30's</span></div>
-    <div>Collection: <span id="collect"> 0 </span> records!</div>
-    <div>Lever:<span id="level">1</span></div>
+      <div>
+        <h3>Time: <span id="time">30's</span></h3>
+      </div>
+      <div>
+        <h3>Collection: <span id="collect"> 0 </span> records!</h3>
+      </div>
+      <div>
+        <h3>Level:<span id="level">1</span></h3>
+      </div>
+    </div>
 
     <script src="./src/constants.js"></script>
     <script src="./src/Vinyl.js"></script>

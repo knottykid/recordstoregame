@@ -23,3 +23,19 @@
   background-color: rgba(217, 213, 93, 255);
   box-shadow: 10px 5px 5px #db4256;
 }
+
+.rsd {
+  display: flex;
+  height: 100vh;
+  background-color: #000;
+  color: aliceblue;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-direction: column;
+
+  /* display: block; */
+  /* margin: 0 auto; */
+}
