@@ -14,11 +14,9 @@ function preload() {
   for (i = 0; i < 25; i++) {
     lp[i] = loadImage(`./Vinyl/R-${i}.jpg`);
   }
-  collector = loadImage("../assest/illustration front character.png");
+  collector = loadImage("./assest/jf.png");
 
-  gameMusic = loadSound(
-    "./music/Pretty Lights - Pink Floyd Time Remix (320 kbps).mp3"
-  );
+  gameMusic = loadSound("./music/PrettyLights-PinkFloyd-TimeRemix.mp3");
 }
 
 //Create canvas for the game
