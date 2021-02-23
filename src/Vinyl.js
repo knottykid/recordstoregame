@@ -12,8 +12,9 @@ class Vinyl {
   }
 
   draw() {
-    if (this.x <= 500 && this.y <= 300)
+    if (this.x > 100 && this.x < 550 && this.y < 300) {
       image(this.lp, this.x, this.y, this.width, this.height);
+    }
   }
 
   move() {

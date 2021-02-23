@@ -8,11 +8,13 @@ startButton.addEventListener("click", function (event) {
 });
 
 let lp = [];
+
+// getting the images and the music ready for the game.
 function preload() {
   for (i = 0; i < 25; i++) {
     lp[i] = loadImage(`./Vinyl/R-${i}.jpg`);
   }
-  collector = loadImage("./assest/Featured-Image20.png");
+  collector = loadImage("../assest/illustration front character.png");
 
   gameMusic = loadSound(
     "./music/Pretty Lights - Pink Floyd Time Remix (320 kbps).mp3"
@@ -27,13 +29,11 @@ function setup() {
 
 //draw all the things for the game
 function draw() {
-  clear();
-  game.draw();
   if (game.isRunning === false) {
     return;
   }
-  // clear();
-  // game.draw();
+  clear();
+  game.draw();
 }
 
 function index(x, y) {

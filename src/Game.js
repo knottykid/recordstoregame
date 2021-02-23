@@ -36,7 +36,11 @@ class Game {
       this.vinyls.push(new Vinyl());
     }
 
-    if (this.vinylCounter === 10) {
+    if (this.vinylCounter === 8) {
+      this.endGame = "win";
+    } else if (this.level === 2 && this.vinylCounter === 12) {
+      this.endGame = "win";
+    } else if (this.level === 3 && this.vinylCounter === 16) {
       this.endGame = "win";
     } else {
       this.timeRemaining === 0;
