@@ -7,10 +7,11 @@ function preload() {
   for (i = 0; i < 25; i++) {
     lp[i] = loadImage(`./Vinyl/R-${i}.jpg`);
   }
+  collector = loadImage("./assest/back.png");
   collectorBack = loadImage("./assest/back.png");
-  // collectorFront = loadImage("./assest/front.png");
-  // collectorLeft = loadImage("./assest/left.png");
-  // collectorRight = loadImage("./assest/right.png");
+  collectorFront = loadImage("./assest/front.png");
+  collectorLeft = loadImage("./assest/left.png");
+  collectorRight = loadImage("./assest/right.png");
 
   gameMusic = loadSound("./music/PrettyLights-PinkFloyd-TimeRemix.mp3");
 }

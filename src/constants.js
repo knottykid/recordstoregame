@@ -1,10 +1,12 @@
 const WIDTH = 650;
 const HEIGHT = 450;
 const SQUARE_SIDE = 50;
+const score = document.getElementById(".score");
 let cols, rows;
 let w = 50;
 let vinyl;
 let bgImage;
+let collector;
 let collectorFront;
 let collectorBack;
 let collectorLeft;

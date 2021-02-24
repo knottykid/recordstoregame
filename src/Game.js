@@ -11,6 +11,7 @@ class Game {
     this.endGame = false;
     this.gameMusic = gameMusic;
     this.time = time;
+    this.score = 0;
   }
 
   setup() {}
@@ -66,6 +67,17 @@ class Game {
     } else if (this.level === 3 && this.vinylCounter === 16) {
       this.endGame = "win";
     } else if (this.time === 0) {
+      // const button = document.createElement("button");
+      // button.innerText = "Wanna play again?";
+      // button.style.background = "yellow";
+      // document.body.appendChild(button);
+      // button.onclick = () => {
+      //   this.startGame();
+      //   button.parentNode.removeChild(button);
+      //   this.score++;
+      //   score.innerText = this.score;
+      //   loop();
+      // };
       this.endGame = "out";
     }
 
