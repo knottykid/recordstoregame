@@ -1,6 +1,13 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+} */
+
 .startingPage {
   background-repeat: no-repeat;
-  background-image: url("../assest/a549e5b6e30d191ea78be646ce91407f.jpg");
+  background-image: url("../assest/imageedit_26_3841004364.jpg");
   background-size: 100vh;
   background-position: absolute;
   background-position: 200px;
@@ -24,8 +31,17 @@
   box-shadow: 10px 5px 5px #db4256;
 }
 
+#restart {
+  display: block;
+  margin: 0 auto;
+}
+
 .rsd {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* display: flex;
   height: 100vh;
   background-color: #000;
   color: aliceblue;
@@ -34,7 +50,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  flex-direction: column;
+  flex-direction: column; */
 
   /* display: block; */
   /* margin: 0 auto; */

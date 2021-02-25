@@ -1,5 +1,7 @@
 class Background {
   constructor() {}
 
-  draw() {}
+  draw() {
+    image(background1);
+  }
 }

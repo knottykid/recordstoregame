@@ -14,3 +14,8 @@ let collectorRight;
 let current;
 let time = 60;
 let gameMusic;
+let background1;
+let background2;
+let background3;
+let goodEnd;
+let badEnd;

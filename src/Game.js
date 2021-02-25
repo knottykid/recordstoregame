@@ -18,22 +18,17 @@ class Game {
 
   draw() {
     clear();
-    if (this.level > 1) {
-      background("rgba(0,255,0, 0.25)");
+    if (this.level === 2) {
+      background(background2);
+    } else if (this.level > 3) {
+      background(background3);
     } else {
-      background("red");
+      background(background1);
     }
-    textSize(25);
-    textStyle(BOLD);
-    fill(70, 3, 117);
-    text(`Level: ${this.level}`, 1200, 100);
-
-    for (let i = 0; i <= WIDTH; i += SQUARE_SIDE) {
-      line(i, 0, i, HEIGHT);
-    }
-    for (let i = 0; i <= WIDTH; i += SQUARE_SIDE) {
-      line(0, i, WIDTH, i);
-    }
+    // textSize(25);
+    // textStyle(BOLD);
+    // fill(70, 3, 117);
+    // text(`Level: ${this.level}`, 1200, 100);
 
     this.player.draw();
 
@@ -51,10 +46,6 @@ class Game {
         if (this.collisionCheck(this.player, vinyl)) {
           document.getElementById("collect").innerHTML = this.vinylCounter;
           console.log(this.vinylCounter);
-          // localStorage.setItem("collection", 0);
-          // document.getElementById("collect").innerHTML = localStorage.getItem(
-          //   "collection"
-          // );
           return (this.vinylCounter += 1);
         }
       }
@@ -67,17 +58,19 @@ class Game {
     } else if (this.level === 3 && this.vinylCounter === 16) {
       this.endGame = "win";
     } else if (this.time === 0) {
-      // const button = document.createElement("button");
-      // button.innerText = "Wanna play again?";
-      // button.style.background = "yellow";
-      // document.body.appendChild(button);
-      // button.onclick = () => {
-      //   this.startGame();
-      //   button.parentNode.removeChild(button);
-      //   this.score++;
-      //   score.innerText = this.score;
-      //   loop();
-      // };
+      const button = document.createElement("button");
+      button.innerText = "try again?";
+      button.style.background = "black";
+      button.style.color = "white";
+      button.classList.add("restart");
+      document.body.appendChild(button);
+      button.onclick = () => {
+        location.reload();
+        button.parentNode.removeChild(button);
+        this.score++;
+        score.innerText = this.score;
+        loop();
+      };
       this.endGame = "out";
     }
 
@@ -151,11 +144,13 @@ class Game {
   }
 
   toTheNextLevel() {
-    this.nextLevel.draw();
     this.level++;
     document.getElementById("level").innerHTML = this.level;
     this.resetVariables();
     this.endGame = "";
+    // if (this.time === 0) {
+    //   this.nextLevel.draw();
+    // }
   }
   goBackHome() {
     console.log("helloooo");

@@ -12,7 +12,11 @@ function preload() {
   collectorFront = loadImage("./assest/front.png");
   collectorLeft = loadImage("./assest/left.png");
   collectorRight = loadImage("./assest/right.png");
-
+  background1 = loadImage("./assest/bg-game_1.jpeg");
+  background2 = loadImage("./assest/bg-game_2.jpeg");
+  background3 = loadImage("./assest/bg-game_3.jpeg");
+  goodEnd = loadImage("./assest/imageedit_5_3450569759.jpg");
+  badEnd = loadImage("./assest/imageedit_8_8594792081.jpg");
   gameMusic = loadSound("./music/PrettyLights-PinkFloyd-TimeRemix.mp3");
 }
 
@@ -50,16 +54,7 @@ function draw() {
   game.draw();
 }
 
-function index(x, y) {
-  if (x < 0 || y < 0 || x > cols-- || y > rows--) {
-    return -1;
-  }
-  return x + y * cols;
-}
-
 //buttons from the keyboard to press
 function keyPressed() {
   game.keyPressed();
 }
-
-//TODO : make the vinyl to no show where the player is
