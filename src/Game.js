@@ -1,3 +1,5 @@
+//this is where the magic happens
+
 class Game {
   constructor() {
     this.player = new Player(300, 400);
@@ -6,7 +8,7 @@ class Game {
     this.vinylCounter = 0;
     this.level = 1;
     this.isRunning = false;
-    this.nextLevel = new NextLevel();
+    this.goodEnd = new GoodEnd();
     this.gameOver = new GameOver();
     this.endGame = false;
     this.gameMusic = gameMusic;
@@ -25,14 +27,10 @@ class Game {
     } else {
       background(background1);
     }
-    // textSize(25);
-    // textStyle(BOLD);
-    // fill(70, 3, 117);
-    // text(`Level: ${this.level}`, 1200, 100);
 
     this.player.draw();
 
-    if (frameCount % 90 === 0) {
+    if (frameCount % 120 === 0) {
       this.vinyls.push(new Vinyl());
     }
 
@@ -46,6 +44,7 @@ class Game {
         if (this.collisionCheck(this.player, vinyl)) {
           document.getElementById("collect").innerHTML = this.vinylCounter;
           console.log(this.vinylCounter);
+          this.score += 1;
           return (this.vinylCounter += 1);
         }
       }
@@ -57,25 +56,17 @@ class Game {
       this.endGame = "win";
     } else if (this.level === 3 && this.vinylCounter === 16) {
       this.endGame = "win";
-    } else if (this.time === 0) {
-      const button = document.createElement("button");
-      button.innerText = "try again?";
-      button.style.background = "black";
-      button.style.color = "white";
-      button.classList.add("restart");
-      document.body.appendChild(button);
-      button.onclick = () => {
-        location.reload();
-        button.parentNode.removeChild(button);
-        this.score++;
-        score.innerText = this.score;
-        loop();
-      };
+    } else if (this.time === 0 && this.level > 1) {
+      this.endGame = "pro";
+    } else if (this.time === 0 && this.level === 1) {
       this.endGame = "out";
     }
 
     if (this.endGame === "win") {
       return this.toTheNextLevel();
+    }
+    if (this.endGame === "pro") {
+      return this.discogsKing();
     }
     if (this.endGame === "out") {
       return this.goBackHome();
@@ -122,7 +113,7 @@ class Game {
   resetVariables() {
     this.vinylCounter = 0;
 
-    this.time = 40;
+    this.time = 25;
   }
 
   startGame() {
@@ -135,8 +126,6 @@ class Game {
         clearInterval(this.timer);
         document.getElementById("time").innerHTML =
           "the Time is gone, the Song is over";
-        // noLoop();
-        gameMusic.stop();
       }
 
       this.time--;
@@ -148,13 +137,36 @@ class Game {
     document.getElementById("level").innerHTML = this.level;
     this.resetVariables();
     this.endGame = "";
-    // if (this.time === 0) {
-    //   this.nextLevel.draw();
-    // }
+  }
+
+  discogsKing() {
+    this.goodEnd.draw();
+    noLoop();
+    gameMusic.stop();
+    const button = document.createElement("button");
+    button.innerText = "RESTART!";
+    button.style.background = "black";
+    button.style.color = "red";
+    button.classList.add("restart");
+    document.body.appendChild(button);
+    button.onclick = () => {
+      location.reload();
+      button.parentNode.removeChild(button);
+    };
   }
   goBackHome() {
-    console.log("helloooo");
-    noLoop();
     this.gameOver.draw();
+    noLoop();
+    gameMusic.stop();
+    const button = document.createElement("button");
+    button.innerText = "RESTART!";
+    button.style.background = "black";
+    button.style.color = "red";
+    button.classList.add("restart");
+    document.body.appendChild(button);
+    button.onclick = () => {
+      location.reload();
+      button.parentNode.removeChild(button);
+    };
   }
 }

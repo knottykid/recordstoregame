@@ -1,3 +1,4 @@
+//here we start everything
 const game = new Game();
 const startingPage = document.querySelector(".startingPage");
 const startButton = document.querySelector(".startButton");
@@ -18,6 +19,8 @@ function preload() {
   goodEnd = loadImage("./assest/imageedit_5_3450569759.jpg");
   badEnd = loadImage("./assest/imageedit_8_8594792081.jpg");
   gameMusic = loadSound("./music/PrettyLights-PinkFloyd-TimeRemix.mp3");
+  goodEndMusic = loadSound("./music/LofiLove.wav");
+  badEndMusic = loadSound("./music/SonicBeatMaster.wav");
 }
 
 startButton.addEventListener("click", function (event) {
@@ -28,6 +31,7 @@ startButton.addEventListener("click", function (event) {
   let musicInterval = setInterval(() => {
     try {
       gameMusic.play();
+      gameMusic.setVolume(0.2);
       clearInterval(musicInterval);
     } catch (error) {
       console.log("ERROR");

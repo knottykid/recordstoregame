@@ -1,3 +1,4 @@
+//variables for the game
 const WIDTH = 650;
 const HEIGHT = 450;
 const SQUARE_SIDE = 50;
@@ -12,8 +13,10 @@ let collectorBack;
 let collectorLeft;
 let collectorRight;
 let current;
-let time = 60;
+let time = 40;
 let gameMusic;
+let goodEndMusic;
+let badEndMusic;
 let background1;
 let background2;
 let background3;

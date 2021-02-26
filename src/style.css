@@ -1,20 +1,38 @@
-/* body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-} */
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700");
+body {
+  font-family: "Amatic SC", sans-serif;
+  font-size: 20px;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+.rsd {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+
+  outline: none;
+  text-align: center;
+  line-height: 1;
+}
 
 .startingPage {
   background-repeat: no-repeat;
   background-image: url("../assest/imageedit_26_3841004364.jpg");
+
+  margin: 0 auto;
+  padding-left: 0.3%;
   background-size: 100vh;
   background-position: absolute;
-  background-position: 200px;
+  background-position: 400px;
   height: 100vh;
   background-color: #000;
-  color: aliceblue;
-  font-size: medium;
+  color: rgb(239, 178, 24);
+  font-size: larger;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,27 +49,40 @@
   box-shadow: 10px 5px 5px #db4256;
 }
 
-#restart {
-  display: block;
-  margin: 0 auto;
+.restart {
+  background-color: rgb(43, 226, 214);
+  width: 200px;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.rsd {
+#rsd {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* display: flex;
-  height: 100vh;
-  background-color: #000;
-  color: aliceblue;
-  font-size: medium;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-direction: column; */
+}
 
-  /* display: block; */
-  /* margin: 0 auto; */
+.icons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+p {
+  padding: 5px;
+  border: 5px solid #1c95a5;
+  margin: 5px;
+  background: #fffed1;
 }

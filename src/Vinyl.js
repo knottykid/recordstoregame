@@ -1,3 +1,5 @@
+//vinyl class for the collectibles
+
 class Vinyl {
   constructor() {
     this.x = this.setRandomPosition();
