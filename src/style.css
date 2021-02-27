@@ -3,6 +3,10 @@ body {
   font-family: "Amatic SC", sans-serif;
   font-size: 20px;
 }
+canvas {
+  display: block;
+  margin: 0 auto;
+}
 
 @keyframes stroke-offset {
   100% {
@@ -25,13 +29,13 @@ body {
   background-image: url("../assest/imageedit_26_3841004364.jpg");
 
   margin: 0 auto;
-  padding-left: 0.3%;
+  padding-left: 20%;
   background-size: 100vh;
   background-position: absolute;
   background-position: 400px;
   height: 100vh;
   background-color: #000;
-  color: rgb(239, 178, 24);
+  color: rgb(250, 250, 250);
   font-size: larger;
   display: flex;
   align-items: center;
