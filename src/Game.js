@@ -3,6 +3,7 @@
 class Game {
   constructor() {
     this.player = new Player(300, 400);
+    this.background = new Background();
     this.vinyls = [];
     this.vinylCounter = 0;
     this.level = 1;
@@ -41,7 +42,6 @@ class Game {
         this.vinyls.splice(index, 1);
         if (this.collisionCheck(this.player, vinyl)) {
           document.getElementById("collect").innerHTML = this.vinylCounter;
-          console.log(this.vinylCounter);
           this.score += 1;
           return (this.vinylCounter += 1);
         }
@@ -118,8 +118,6 @@ class Game {
     this.timer = setInterval(() => {
       if (this.time > 0) {
         document.getElementById("time").innerHTML = this.time;
-
-        console.log(this.time);
       } else if (this.time < 0) {
         clearInterval(this.timer);
         document.getElementById("time").innerHTML =

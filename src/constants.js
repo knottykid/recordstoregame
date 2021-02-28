@@ -1,7 +1,6 @@
 //variables for the game
 const WIDTH = 650;
 const HEIGHT = 450;
-// const SQUARE_SIDE = 50;
 const score = document.getElementById(".score");
 let cols, rows;
 let w = 50;
@@ -12,7 +11,6 @@ let collectorFront;
 let collectorBack;
 let collectorLeft;
 let collectorRight;
-let current;
 let time = 50;
 let gameMusic;
 let goodEndMusic;

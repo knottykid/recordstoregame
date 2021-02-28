@@ -5,6 +5,7 @@ const startButton = document.querySelector(".startButton");
 
 // getting the images and the music ready for the game.
 function preload() {
+  //array of random covers
   for (i = 0; i < 25; i++) {
     lp[i] = loadImage(`./Vinyl/R-${i}.jpg`);
   }
@@ -45,7 +46,6 @@ let lp = [];
 //Create canvas for the game
 function setup() {
   createCanvas(WIDTH, HEIGHT);
-  game.setup();
 }
 
 //draw all the things for the game
