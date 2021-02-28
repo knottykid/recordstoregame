@@ -4,7 +4,6 @@ class Game {
   constructor() {
     this.player = new Player(300, 400);
     this.vinyls = [];
-    this.background = new Background();
     this.vinylCounter = 0;
     this.level = 1;
     this.isRunning = false;
@@ -15,9 +14,7 @@ class Game {
     this.time = time;
     this.score = 0;
   }
-
-  setup() {}
-
+  //draw the back ground on every level
   draw() {
     clear();
     if (this.level === 2) {
@@ -27,10 +24,11 @@ class Game {
     } else {
       background(background1);
     }
-
+    //draw the player
     this.player.draw();
 
-    if (frameCount % 120 === 0) {
+    // push new collectible every 1.5 seconds
+    if (frameCount % 90 === 0) {
       this.vinyls.push(new Vinyl());
     }
 
@@ -38,7 +36,7 @@ class Game {
     this.vinyls.forEach((vinyl, index) => {
       vinyl.draw();
       vinyl.move();
-
+      // collectibles and splice
       if (this.collisionCheck(this.player, vinyl) || this.vinyls.length > 10) {
         this.vinyls.splice(index, 1);
         if (this.collisionCheck(this.player, vinyl)) {
@@ -49,7 +47,7 @@ class Game {
         }
       }
     });
-
+    //conditions to change levels
     if (this.level === 1 && this.vinylCounter === 8) {
       this.endGame = "win";
     } else if (this.level === 2 && this.vinylCounter === 12) {
@@ -61,7 +59,7 @@ class Game {
     } else if (this.time === 0 && this.level === 1) {
       this.endGame = "out";
     }
-
+    // calling methods for levels, good and bad ending
     if (this.endGame === "win") {
       return this.toTheNextLevel();
     }
@@ -72,7 +70,7 @@ class Game {
       return this.goBackHome();
     }
   }
-
+  // movements of the player
   keyPressed() {
     if (keyCode === 38) {
       this.player.moveUp();
@@ -87,7 +85,7 @@ class Game {
       this.player.moveRight();
     }
   }
-
+  //collision check
   collisionCheck(player, vinyl) {
     const playerTopArea = player.y;
     const playerLeftArea = player.x;
@@ -113,9 +111,9 @@ class Game {
   resetVariables() {
     this.vinylCounter = 0;
 
-    this.time = 25;
+    this.time = 30;
   }
-
+  //timer interval
   startGame() {
     this.timer = setInterval(() => {
       if (this.time > 0) {
@@ -131,14 +129,14 @@ class Game {
       this.time--;
     }, 1000);
   }
-
+  // chaging level method
   toTheNextLevel() {
     this.level++;
     document.getElementById("level").innerHTML = this.level;
     this.resetVariables();
     this.endGame = "";
   }
-
+  // good end method
   discogsKing() {
     this.goodEnd.draw();
     noLoop();
@@ -154,6 +152,8 @@ class Game {
       button.parentNode.removeChild(button);
     };
   }
+
+  //bad end method
   goBackHome() {
     this.gameOver.draw();
     noLoop();

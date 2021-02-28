@@ -27,13 +27,12 @@ canvas {
 .startingPage {
   background-repeat: no-repeat;
   background-image: url("../assest/imageedit_26_3841004364.jpg");
-
   margin: 0 auto;
-  padding-left: 20%;
   background-size: 100vh;
-  background-position: absolute;
+  background-position: relative;
   background-position: 400px;
   height: 100vh;
+  width: 100%;
   background-color: #000;
   color: rgb(250, 250, 250);
   font-size: larger;
@@ -44,10 +43,10 @@ canvas {
 }
 
 .startButton {
-  font-size: 20px;
-  width: 150px;
+  font-size: 30px;
+  width: 200px;
   margin-bottom: 250px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10%;
   background-color: rgba(217, 213, 93, 255);
   box-shadow: 10px 5px 5px #db4256;

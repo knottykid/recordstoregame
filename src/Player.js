@@ -3,8 +3,8 @@ class Player {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.width = SQUARE_SIDE;
-    this.height = SQUARE_SIDE;
+    this.width = w;
+    this.height = w;
   }
   moveUp() {
     this.y -= this.height;
