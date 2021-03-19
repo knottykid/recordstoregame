@@ -33,7 +33,7 @@ startButton.addEventListener("click", function (event) {
     try {
       gameMusic.play();
       Slider(0, 1, 0.1, 0.1)
-      gameMusic.setVolume(0.2);
+      gameMusic.setVolume(slider.value());
       clearInterval(musicInterval);
     } catch (error) {
       console.log("ERROR");
@@ -51,7 +51,7 @@ function setup() {
 
 //draw all the things for the game
 function draw() {
-gameMusic.setVolume(slider.value())
+
   if (game.isRunning === false) {
     return;
   }
