@@ -32,9 +32,7 @@ startButton.addEventListener("click", function (event) {
   let musicInterval = setInterval(() => {
     try {
       gameMusic.play();
-      slider = createSlider(0, 1, 0.2, 0.2)
-      gameMusic.setVolume(slider.value()); 
-//       gameMusic.setVolume(slider.value());
+       gameMusic.setVolume(0.1, 0.2);
       clearInterval(musicInterval);
     } catch (error) {
       console.log("ERROR");
