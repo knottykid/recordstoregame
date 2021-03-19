@@ -23,12 +23,10 @@ function preload() {
   goodEndMusic = loadSound("./music/LofiLove.wav");
   badEndMusic = loadSound("./music/SonicBeatMaster.wav");
 }
-
 startButton.addEventListener("click", function (event) {
   startingPage.style.display = "none";
   game.isRunning = true;
   game.startGame();
-
   let musicInterval = setInterval(() => {
     try {
       gameMusic.play();
@@ -40,12 +38,11 @@ startButton.addEventListener("click", function (event) {
     }
   }, 500);
 });
-
 let lp = [];
-
 //Create canvas for the game
 function setup() {
   createCanvas(WIDTH, HEIGHT);
+  game.setup();
 }
 
 //draw all the things for the game
@@ -53,11 +50,9 @@ function draw() {
   if (game.isRunning === false) {
     return;
   }
-
   clear();
   game.draw();
 }
-
 //buttons from the keyboard to press
 function keyPressed() {
   game.keyPressed();
