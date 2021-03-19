@@ -42,7 +42,7 @@ let lp = [];
 //Create canvas for the game
 function setup() {
   createCanvas(WIDTH, HEIGHT);
-  game.setup();
+ 
 }
 
 //draw all the things for the game
