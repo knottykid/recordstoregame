@@ -2,7 +2,7 @@
 const game = new Game();
 const startingPage = document.querySelector(".startingPage");
 const startButton = document.querySelector(".startButton");
-
+let slider;
 // getting the images and the music ready for the game.
 function preload() {
   //array of random covers
@@ -32,8 +32,9 @@ startButton.addEventListener("click", function (event) {
   let musicInterval = setInterval(() => {
     try {
       gameMusic.play();
-      Slider(0, 1, 0.1, 0.1)
-      gameMusic.setVolume(slider.value());
+      slider = createSlider(0, 1, 0.2, 0.2)
+      gameMusic.setVolume(slider.value()); 
+//       gameMusic.setVolume(slider.value());
       clearInterval(musicInterval);
     } catch (error) {
       console.log("ERROR");
