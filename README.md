@@ -1,6 +1,6 @@
 # recordstoregame
 
-##a fun game about collecting **vinyl** 
+A fun  and simple *game* about collecting **vinyl** 
 
 This game is my first project using *javascript and j5*, also learning some *DOM manipulation*. It was a really fun project to make.
 
@@ -15,10 +15,10 @@ For best resolution play with the browser on full screen and turn up the volume!
 
 ![alt](https://res.cloudinary.com/dzxo1mr9i/image/upload/v1619182122/test-for-class/m9dgbg6r3p7jlzo8ikbv.png)
 
-* [Direct Link for the Game] (https://knottykid.github.io/recordstoregame/)
+[Direct Link for the Game](https://knottykid.github.io/recordstoregame/)
 
-* [player and background designed by:**Juan Carlos "KKO" Graciano**] (http://jcgraciano.com)
+ [Player and background designed by:**Juan Carlos "KKO" Graciano**](http://jcgraciano.com)
 
-* [main game music by: **Pretty Lights**] (https://soundcloud.com/prettylights)
+ [Main game music by: **Pretty Lights**](https://soundcloud.com/prettylights)
 
-*[Good and Bad End music by: **Dambeer** ] (https://soundcloud.app.goo.gl/zjTSN)
+[Good and Bad End music by: **Dambeer** ](https://soundcloud.app.goo.gl/zjTSN)
