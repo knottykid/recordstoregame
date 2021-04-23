@@ -1,15 +1,15 @@
 # recordstoregame
 
-A fun  and simple *game* about collecting **vinyl** 
+A fun  and simple **Game** about collecting **Vinyl** 
 
-This game is my first project using *javascript and j5*, also learning some *DOM manipulation*. It was a really fun project to make.
+This **Game** is my first project using *javascript and j5*, also learning some *DOM manipulation*. It was a really fun project to make.
 
 Its inspired on the international **Record Store Day** and **Discogs**.
-The main purpose of the game is to resemble the feeling of getting some Exclusive LTD RSD Vinyl and while you're at it, as long as you collect the music will still play. So keep it up!
+The main purpose of the game is to resemble the feeling of getting some Exclusive **LTD RSD Vinyl** and while you're at it, as long as you collect the music will still play. *So keep it up!*
 
 
 
-Use the Arros to move around, and collect the vinylt. 
+Use the **Arrows** to move around, and collect the **Vinyl** *before you run out of time*. 
 
 For best resolution play with the browser on full screen and turn up the volume!
 
